@@ -15,11 +15,11 @@
             <div class="hamburger"></div>
         </div>
         <div class="menu-container">
-            <div class="container">
-                <div class="row align-items-center justify-content-center w-100 menu-row">
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-center menu-row">
                     <!-- Left: Nav Links -->
-                    <div class="col-12 col-md-6 col-lg-6 border-right border-white">
-                        <ul class="menu">
+                    <div class="col-12 col-md-6 col-lg-6 border-right border-white align-self-center">
+                        <ul class="menu d-flex flex-column align-items-center">
                             <li class="nav-item px-2">
                                 <a class="nav-link <?php if ($page == 'home')
                                     echo 'active'; ?>" href="index.php">Home</a>
@@ -43,7 +43,7 @@
                         </ul>
                     </div>
                     <!-- Right: Contact Info -->
-                    <div class="col-12 col-md-6 col-lg-6 text-white">
+                    <div class="col-12 col-md-6 col-lg-6 text-white align-self-end">
                         <img src="images/logo.png" alt="brand logo" title="Demo Traders" class="img-fluid">
                         <p class="mb-2 heading1 text-start">Retail & Wholesale Fireworks Store</p>
                         <p class="mb-2 heading1 text-start"><i class="bi bi-whatsapp text-success"></i> +91 9999999999

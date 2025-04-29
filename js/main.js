@@ -39,69 +39,67 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // index counter
-  // Initialize Odometer
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM fully loaded');
-  
-    function isElementInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      console.log('Element position:', rect);
-      return (
-        rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom > 0
-      );
-    }
-  
-    function handleCounterAnimation() {
-      const counterSection = document.querySelector('.index-counter');
-      const counters = document.querySelectorAll('.index-counter .odometer');
-  
-      if (!counterSection) {
-        console.error('Counter section not found');
-        return;
-      }
-  
-      // console.log('Checking if section is in viewport...');
-  
-      if (isElementInViewport(counterSection) && !counterSection.classList.contains('counted')) {
-        console.log('Section in viewport, starting counter animations');
-  
+// index counter
+// Initialize Odometer
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOM fully loaded');
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    console.log('Element position:', rect);
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom > 0
+    );
+  }
+
+  function handleCounterAnimation() {
+    const counterSections = ['.index-counter', '.about-intro'];
+
+    counterSections.forEach((selector) => {
+      const section = document.querySelector(selector);
+      const counters = document.querySelectorAll(`${selector} .odometer`);
+
+      if (!section || section.classList.contains('counted')) return;
+
+      if (isElementInViewport(section)) {
+        console.log(`${selector} in viewport, starting odometer`);
+
         counters.forEach((counter, index) => {
           const finalValue = counter.getAttribute('data-count');
-          console.log(`Counter ${index + 1}: setting value to`, finalValue);
-          
-          counter.innerHTML = finalValue; // Odometer should pick this change
+          console.log(`${selector} counter ${index + 1}:`, finalValue);
+          counter.innerHTML = finalValue;
         });
-  
-        counterSection.classList.add('counted');
-        console.log('Counter section marked as counted');
+
+        section.classList.add('counted');
       }
-    }
-  
-    handleCounterAnimation();
-    window.addEventListener('scroll', handleCounterAnimation);
-  
-    // Hover effect
-    const counterItems = document.querySelectorAll('.index-counter-item');
-    counterItems.forEach((item, index) => {
-      item.addEventListener('mouseenter', function() {
-        const icon = this.querySelector('.index-counter-icon');
-        if (icon) {
-          console.log(`Hovering over counter item ${index + 1}`);
-          icon.style.transform = 'scale(1.2) rotate(10deg)';
-          icon.style.transition = 'transform 0.3s ease';
-        }
-      });
-  
-      item.addEventListener('mouseleave', function() {
-        const icon = this.querySelector('.index-counter-icon');
-        if (icon) {
-          icon.style.transform = 'scale(1) rotate(0deg)';
-        }
-      });
+    });
+  }
+
+  handleCounterAnimation();
+  window.addEventListener('scroll', handleCounterAnimation);
+
+  // Hover effect (only for .index-counter, not needed for .about-intro)
+  const counterItems = document.querySelectorAll('.index-counter-item');
+  counterItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', function () {
+      const icon = this.querySelector('.index-counter-icon');
+      if (icon) {
+        console.log(`Hovering over counter item ${index + 1}`);
+        icon.style.transform = 'scale(1.2) rotate(10deg)';
+        icon.style.transition = 'transform 0.3s ease';
+      }
+    });
+
+    item.addEventListener('mouseleave', function () {
+      const icon = this.querySelector('.index-counter-icon');
+      if (icon) {
+        icon.style.transform = 'scale(1) rotate(0deg)';
+      }
     });
   });
+});
+
   // index brands
   // Initialize Swiper
 document.addEventListener('DOMContentLoaded', function() {
