@@ -7,11 +7,11 @@
 
 <!-- Header -->
 <header id="head">
-    <nav id="main-navigation" class="navigation p-2">
+    <nav id="main-navigation" class="navigation p-3 d-flex align-items-center">
         <a href="index.php" class="logo">
-            <div class="logo-text text-danger font-weight-bold heading5">Demo Traders</div>
+            <img src="images/logo.png" alt="logo" title="Demo Traders" class="img-fluid">
         </a>
-        <div class="hamburger-menu">
+        <div class="hamburger-menu menu-closed">
             <div class="hamburger"></div>
         </div>
         <div class="menu-container">
@@ -19,7 +19,7 @@
                 <div class="row align-items-center justify-content-center menu-row">
                     <!-- Left: Nav Links -->
                     <div class="col-12 col-md-6 col-lg-6 border-right border-white align-self-center">
-                        <ul class="menu d-flex flex-column align-items-center">
+                        <ul class="menu d-flex flex-column align-items-center mt-lg-5">
                             <li class="nav-item px-2">
                                 <a class="nav-link <?php if ($page == 'home')
                                     echo 'active'; ?>" href="index.php">Home</a>
@@ -43,18 +43,30 @@
                         </ul>
                     </div>
                     <!-- Right: Contact Info -->
-                    <div class="col-12 col-md-6 col-lg-6 text-white align-self-end">
-                        <img src="images/logo.png" alt="brand logo" title="Demo Traders" class="img-fluid">
-                        <p class="mb-2 heading1 text-start">Retail & Wholesale Fireworks Store</p>
-                        <p class="mb-2 heading1 text-start"><i class="bi bi-whatsapp text-success"></i> +91 9999999999
-                        </p>
-                        <p class="mb-2 heading1 text-start"><i class="bi bi-telephone text-primary"></i> +91
-                            8888888888,
-                            +91
-                            7777777777</p>
-                        <p class="mb-0 heading1 text-start"><i class="bi bi-envelope-fill text-warning"></i>
-                            info@crackershop.com</p>
+                    <div class="col-12 col-md-6 col-lg-6 text-white align-self-center">
+                        <div class="flex-container d-flex flex-column align-items-center text-left">
+                            <img src="images/logo.png" alt="brand logo" title="Demo Traders"
+                                class="img-fluid main-logo">
+
+                            <!-- Wrap text content in a full-width div -->
+                            <div class="w-100 text-start contact-details">
+                                <p class="mb-2 d-flex">
+                                    <i class="bi bi-geo-alt-fill text-warning mr-2"></i> Demo Building,Demo Colony,Demo
+                                    Street,Sivakasi
+                                </p>
+                                <p class="mb-2 d-flex">
+                                    <i class="bi bi-whatsapp text-success mr-2"></i> +91 9999999999
+                                </p>
+                                <p class="mb-2 d-flex">
+                                    <i class="bi bi-telephone text-primary mr-2"></i> +91 8888888888, +91 7777777777
+                                </p>
+                                <p class="mb-2 d-flex">
+                                    <i class="bi bi-envelope-fill text-warning mr-2"></i> info@crackershop.com
+                                </p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

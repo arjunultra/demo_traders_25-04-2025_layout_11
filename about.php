@@ -42,14 +42,6 @@
     <!-- about intro -->
     <section class="about-intro pad">
         <div class="container-fluid px-5">
-            <!-- <div class="about-intro-wave">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                    <path fill="#6f42c1" fill-opacity="0.2"
-                        d="M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,138.7C672,149,768,203,864,202.7C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
-                    </path>
-                </svg>
-            </div> -->
-
             <div class="row about-intro-content align-items-center">
                 <!-- Left Content Column -->
                 <div class="col-12 col-lg-6 about-intro-left">
@@ -119,7 +111,7 @@
                     <div class="about-intro-certifications">
                         <div class="cert-title">Safety Certified</div>
                         <div class="cert-badges">
-                            <span class="cert-badge"><i class="bi bi-patch-check-fill"></i> ISO 9001</span>
+                            <span class="cert-badge"><i class="bi bi-patch-check-fill"></i>Licensed Reseller</span>
                             <span class="cert-badge"><i class="bi bi-shield-fill-check"></i> PESO Approved</span>
                             <span class="cert-badge"><i class="bi bi-award-fill"></i> Green Crackers</span>
                         </div>
@@ -164,7 +156,9 @@
                                     <span>Best Prices</span>
                                 </div>
                             </div>
-                            <a href="catalog.php" class="about-parallax-btn">View Catalog</a>
+                            <div class="btn-container text-center text-lg-start">
+                                <a href="catalog.php" class="about-parallax-btn">View Catalog</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 about-parallax-image order-lg-2 order-md-1 order-1">
@@ -285,7 +279,7 @@
                 </div>
             </div>
 
-            <div class="row mt-5">
+            <div class="row about-last-btn-row">
                 <div class="col-12 text-center">
                     <a href="#products" class="theme-button btn-lg">Explore Our Collection <i
                             class="bi bi-arrow-right"></i></a>

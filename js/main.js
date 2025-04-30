@@ -1,16 +1,15 @@
 // nav menu open/close
 $('.hamburger-menu, .link').click(function () {
-    $('body').toggleClass('menu-open');
-  });
-//   menu scroll behaviour
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('head');
-    if (window.scrollY > 50) {
-      header.classList.add('shrink');
-    } else {
-      header.classList.remove('shrink');
-    }
-  });
+  $('body').toggleClass('menu-open');
+
+  // toggle visual style only when menu is closed
+  if ($('body').hasClass('menu-open')) {
+    $('.hamburger-menu').removeClass('menu-closed');
+  } else {
+    $('.hamburger-menu').addClass('menu-closed');
+  }
+});
+
 
 // index carousel swiper
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,67 +37,99 @@ document.addEventListener("DOMContentLoaded", () => {
       // No navigation
     });
   });
-
 // index counter
-// Initialize Odometer
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOM fully loaded');
-
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    console.log('Element position:', rect);
-    return (
-      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.bottom > 0
-    );
-  }
-
-  function handleCounterAnimation() {
-    const counterSections = ['.index-counter', '.about-intro'];
-
-    counterSections.forEach((selector) => {
-      const section = document.querySelector(selector);
-      const counters = document.querySelectorAll(`${selector} .odometer`);
-
-      if (!section || section.classList.contains('counted')) return;
-
-      if (isElementInViewport(section)) {
-        console.log(`${selector} in viewport, starting odometer`);
-
+  // Initialize Odometer
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded');
+  
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      console.log('Element position:', rect);
+      return (
+        rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom > 0
+      );
+    }
+  
+    function handleCounterAnimation() {
+      const counterSection = document.querySelector('.index-counter');
+      const counterSectionTwo = document.querySelector('.index-counter');
+      const counters = document.querySelectorAll('.index-counter .odometer');
+      const counters2 = document.querySelectorAll('.about-intro .odometer');
+  
+      if (!counterSection || !counterSectionTwo) {
+        // console.error('Counter section not found');
+        return;
+      }
+  
+      // console.log('Checking if section is in viewport...');
+  
+      if (isElementInViewport(counterSection) && !counterSection.classList.contains('counted')) {
+        console.log('Section in viewport, starting counter animations');
+  
         counters.forEach((counter, index) => {
           const finalValue = counter.getAttribute('data-count');
-          console.log(`${selector} counter ${index + 1}:`, finalValue);
-          counter.innerHTML = finalValue;
+          // console.log(Counter ${index + 1}: setting value to, finalValue);
+          
+          counter.innerHTML = finalValue; // Odometer should pick this change
         });
-
-        section.classList.add('counted');
+  
+        counterSection.classList.add('counted');
+        console.log('Counter section marked as counted');
       }
-    });
-  }
-
-  handleCounterAnimation();
-  window.addEventListener('scroll', handleCounterAnimation);
-
-  // Hover effect (only for .index-counter, not needed for .about-intro)
-  const counterItems = document.querySelectorAll('.index-counter-item');
-  counterItems.forEach((item, index) => {
-    item.addEventListener('mouseenter', function () {
-      const icon = this.querySelector('.index-counter-icon');
-      if (icon) {
-        console.log(`Hovering over counter item ${index + 1}`);
-        icon.style.transform = 'scale(1.2) rotate(10deg)';
-        icon.style.transition = 'transform 0.3s ease';
-      }
-    });
-
-    item.addEventListener('mouseleave', function () {
-      const icon = this.querySelector('.index-counter-icon');
-      if (icon) {
-        icon.style.transform = 'scale(1) rotate(0deg)';
-      }
+    }
+  
+    handleCounterAnimation();
+    window.addEventListener('scroll', handleCounterAnimation);
+  
+    // Hover effect
+    const counterItems = document.querySelectorAll('.index-counter-item');
+    counterItems.forEach((item, index) => {
+      item.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.index-counter-icon');
+        if (icon) {
+          // console.log(Hovering over counter item ${index + 1});
+          icon.style.transform = 'scale(1.2) rotate(10deg)';
+          icon.style.transition = 'transform 0.3s ease';
+        }
+      });
+  
+      item.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.index-counter-icon');
+        if (icon) {
+          icon.style.transform = 'scale(1) rotate(0deg)';
+        }
+      });
     });
   });
-});
+  // about odometer function
+  // about-intro odometer observer
+  document.addEventListener('DOMContentLoaded', function () {
+    const counters = document.querySelectorAll('.about-intro .odometer');
+  
+    if (counters.length === 0) return;
+  
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const finalValue = counter.getAttribute('data-count');
+          console.log('Triggering counter:', finalValue);
+          counter.innerHTML = finalValue;
+  
+          // Stop observing once triggered
+          observerInstance.unobserve(counter);
+        }
+      });
+    }, {
+      threshold: 0.5, // Increase threshold for more precise viewability
+    });
+  
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+  
 
   // index brands
   // Initialize Swiper
