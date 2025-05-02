@@ -33,7 +33,7 @@
                                     echo 'active'; ?>" href="products.php">Products</a>
                             </li>
                             <li class="nav-item px-2">
-                                <a class="nav-link <?php if ($page == 'safety')
+                                <a class="nav-link <?php if ($page == 'safetytips')
                                     echo 'active'; ?>" href="safetytips.php">Safety Tips</a>
                             </li>
                             <li class="nav-item px-2">

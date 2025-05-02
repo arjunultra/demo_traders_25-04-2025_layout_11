@@ -225,14 +225,21 @@ body.menu-open .navigation .menu li:nth-child(6) {
   color: #ffffff;
   font-weight: bold;
   font-size: 4.5rem;
-  padding: 16px 0;
+  padding: 8px 16px;
   transition: color 1s ease-out;
   outline: 0;
   border-bottom: 5px dotted white;
+  border-radius: 20em;
+  margin-top: 0.5em;
 }
 .navigation .menu li a:hover {
   color: var(--yellow);
   transition: color 0.5s ease-in;
+}
+.navigation .menu li a.active {
+  color: white;
+  background-color: var(--purple);
+  transition: all 0.3s ease-in-out;
 }
 .navigation .menu li.menu-line {
   width: 30px;
