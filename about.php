@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                             <div class="btn-container text-center text-lg-start">
-                                <a href="catalog.php" class="about-parallax-btn">View Catalog</a>
+                                <a href="products.php" class="about-parallax-btn">View Catalog</a>
                             </div>
                         </div>
                     </div>
