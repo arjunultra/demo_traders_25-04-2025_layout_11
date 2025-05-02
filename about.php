@@ -281,7 +281,7 @@
 
             <div class="row about-last-btn-row">
                 <div class="col-12 text-center">
-                    <a href="#products" class="theme-button btn-lg">Explore Our Collection <i
+                    <a href="products.php" class="theme-button btn-lg">Explore Our Collection <i
                             class="bi bi-arrow-right"></i></a>
                 </div>
             </div>

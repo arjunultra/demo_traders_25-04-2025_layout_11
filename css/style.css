@@ -168,8 +168,14 @@ body.menu-open .navigation .hamburger::after {
   background: #ce3745;
   opacity: 0;
 }
+.menu-container .contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .menu-container .contact-details p {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 body.menu-open .navigation .menu-container {
   width: 100%;
@@ -1323,70 +1329,6 @@ section.index-brands .index-brands-card:hover img {
   align-items: center;
   gap: 5px;
 }
-
-/* -------------------------------------------
-   Responsive Styles (Strict Bootstrap Breakpoints)
-------------------------------------------- */
-
-/* Mobile: 1px – 767.98px */
-@media (min-width: 1px) and (max-width: 767.98px) {
-  .about-intro {
-    padding: 50px 0;
-  }
-
-  .about-intro .about-intro-title {
-    font-size: 28px;
-  }
-
-  .about-intro .about-intro-image-overlay {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .about-intro .about-intro-stat .stat-number {
-    font-size: 20px;
-  }
-
-  .about-intro .about-intro-stat .stat-label {
-    font-size: 12px;
-  }
-
-  .about-intro .about-intro-button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .about-intro .cert-badges {
-    flex-direction: column;
-  }
-}
-
-/* Tablet: 768px – 991.98px */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .about-intro {
-    padding: 60px 0;
-  }
-
-  .about-intro .about-intro-title {
-    font-size: 32px;
-  }
-
-  .about-intro .about-intro-button {
-    padding: 10px 18px;
-  }
-
-  .about-intro .about-intro-stat .stat-number {
-    font-size: 22px;
-  }
-
-  .about-intro .about-intro-stat .stat-label {
-    font-size: 13px;
-  }
-
-  .about-intro .cert-badges {
-    gap: 8px;
-  }
-}
 /* about two section */
 /* Why Choose Us Section Specific Styles */
 .whychoose-us {
@@ -1453,7 +1395,7 @@ section.index-brands .index-brands-card:hover img {
 .whychoose-us .feature-box {
   background-color: #fff;
   border-radius: 8px;
-  padding: 30px 20px;
+  padding: 30px 20px 40px; /* extra bottom padding */
   height: 100%;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -1462,22 +1404,22 @@ section.index-brands .index-brands-card:hover img {
   align-items: center;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  border-bottom: 4px solid transparent;
+  overflow: visible; /* changed from hidden */
+  will-change: transform; /* improve hover stability */
+  z-index: 1;
 }
 
 .whychoose-us .feature-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  border-bottom: 4px solid var(--red);
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 0 0 var(--red);
 }
 
 .whychoose-us .feature-box:nth-child(2n):hover {
-  border-bottom: 4px solid var(--yellow);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 0 0 var(--yellow);
 }
 
 .whychoose-us .feature-box:nth-child(3n):hover {
-  border-bottom: 4px solid var(--purple);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 0 0 var(--purple);
 }
 
 .whychoose-us .feature-icon {
@@ -1544,84 +1486,6 @@ section.index-brands .index-brands-card:hover img {
 .whychoose-us .about-last-btn-row {
   padding-top: 80px;
   padding-bottom: 40px;
-}
-/* Tablet Styles */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .whychoose-us .section-title {
-    font-size: 2.2rem;
-  }
-
-  .whychoose-us .section-subtitle {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
-  .whychoose-us .feature-box {
-    padding: 25px 15px;
-  }
-
-  .whychoose-us .feature-icon {
-    width: 70px;
-    height: 70px;
-  }
-
-  .whychoose-us .feature-icon i {
-    font-size: 1.7rem;
-  }
-
-  .whychoose-us .feature-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .whychoose-us .feature-content p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile Styles */
-@media (min-width: 1px) and (max-width: 767.98px) {
-  .whychoose-us::before,
-  .whychoose-us::after {
-    display: none;
-  }
-
-  .whychoose-us .section-title {
-    font-size: 1.8rem;
-  }
-
-  .whychoose-us .section-subtitle {
-    font-size: 0.9rem;
-    max-width: 100%;
-  }
-
-  .whychoose-us .feature-box {
-    margin-bottom: 20px;
-    padding: 20px 15px;
-  }
-
-  .whychoose-us .feature-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
-  }
-
-  .whychoose-us .feature-icon i {
-    font-size: 1.5rem;
-  }
-
-  .whychoose-us .feature-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  .whychoose-us .feature-content p {
-    font-size: 0.85rem;
-  }
-
-  .whychoose-us .btn-primary {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
 }
 /* third section */
 /* About Page Parallax Section Styles */
@@ -1796,87 +1660,6 @@ section.index-brands .index-brands-card:hover img {
   transform: rotate(45deg);
 }
 
-/* Tablet Styles */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .about-parallax-section {
-    padding: 80px 0;
-  }
-
-  .about-parallax-section .gradient-text {
-    font-size: 2.5rem;
-  }
-
-  .about-parallax-section .about-parallax-text {
-    padding: 20px;
-    margin-top: 30px;
-  }
-
-  .about-parallax-section .about-parallax-features {
-    justify-content: space-between;
-  }
-
-  .about-parallax-section .about-feature-item {
-    margin-right: 15px;
-  }
-}
-
-/* Mobile Styles */
-@media (min-width: 1px) and (max-width: 767.98px) {
-  .about-parallax-section {
-    padding: 60px 0;
-    background-attachment: scroll;
-  }
-
-  .about-parallax-section .about-parallax-wave-top,
-  .about-parallax-section .about-parallax-wave-bottom {
-    height: 40px;
-  }
-
-  .about-parallax-section .about-parallax-wave-top svg,
-  .about-parallax-section .about-parallax-wave-bottom svg {
-    height: 40px;
-  }
-
-  .about-parallax-section .gradient-text {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .about-parallax-section .about-parallax-separator {
-    margin: 0 auto 25px auto;
-  }
-
-  .about-parallax-section .about-parallax-desc {
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .about-parallax-section .about-parallax-features {
-    justify-content: center;
-  }
-
-  .about-parallax-section .about-feature-item {
-    margin-right: 20px;
-    margin-bottom: 15px;
-  }
-
-  .about-parallax-section .about-parallax-btn {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 200px;
-  }
-
-  .about-parallax-section .about-parallax-text {
-    padding: 15px;
-    margin-top: 30px;
-  }
-
-  .about-parallax-section .about-parallax-image {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-}
 /* about page ends */
 /* safetytips page */
 /* safety-tips section */
@@ -3073,7 +2856,136 @@ section.index-brands .index-brands-card:hover img {
 /* ************************************************************************************************* */
 /* mobile media query */
 @media (min-width: 1px) and (max-width: 767.98px) {
+  /* about parallax */
+  .about-parallax-section {
+    padding: 60px 0;
+    background-attachment: scroll;
+  }
+
+  .about-parallax-section .about-parallax-wave-top,
+  .about-parallax-section .about-parallax-wave-bottom {
+    height: 40px;
+  }
+
+  .about-parallax-section .about-parallax-wave-top svg,
+  .about-parallax-section .about-parallax-wave-bottom svg {
+    height: 40px;
+  }
+
+  .about-parallax-section .gradient-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .about-parallax-section .about-parallax-separator {
+    margin: 0 auto 25px auto;
+  }
+
+  .about-parallax-section .about-parallax-desc {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .about-parallax-section .about-parallax-features {
+    justify-content: center;
+  }
+
+  .about-parallax-section .about-feature-item {
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+
+  .about-parallax-section .about-parallax-btn {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  .about-parallax-section .about-parallax-text {
+    padding: 15px;
+    margin-top: 30px;
+  }
+
+  .about-parallax-section .about-parallax-image {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  /* about-whychoose */
+  .whychoose-us::before,
+  .whychoose-us::after {
+    display: none;
+  }
+
+  .whychoose-us .section-title {
+    font-size: 1.8rem;
+  }
+
+  .whychoose-us .section-subtitle {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .whychoose-us .feature-box {
+    margin-bottom: 20px;
+    padding: 20px 15px;
+  }
+
+  .whychoose-us .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .whychoose-us .feature-icon i {
+    font-size: 1.5rem;
+  }
+
+  .whychoose-us .feature-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .whychoose-us .feature-content p {
+    font-size: 0.85rem;
+  }
+
+  .whychoose-us .btn-primary {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  /* about-intro */
+  .about-intro {
+    padding: 50px 0;
+  }
+
+  .about-intro .about-intro-title {
+    font-size: 28px;
+  }
+
+  .about-intro .about-intro-image-overlay {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .about-intro .about-intro-stat .stat-number {
+    font-size: 20px;
+  }
+
+  .about-intro .about-intro-stat .stat-label {
+    font-size: 12px;
+  }
+
+  .about-intro .about-intro-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-intro .cert-badges {
+    flex-direction: column;
+  }
   /* navigation */
+
   .navigation .menu li a {
     font-size: 3rem;
   }
@@ -3100,11 +3012,6 @@ section.index-brands .index-brands-card:hover img {
 
   section.index-products .index-products-title {
     font-size: 1.8rem;
-  }
-
-  section.index-products .index-products-wrapper {
-    /* grid-template-columns: 1fr;
-    gap: 1.5rem; */
   }
 
   section.index-products .index-product-card {
@@ -3327,7 +3234,7 @@ section.index-brands .index-brands-card:hover img {
   }
   /* navbar offcanvas */
   .navigation .logo {
-    top: 60px;
+    top: -40px;
     left: 16px;
   }
 
@@ -3407,6 +3314,81 @@ section.index-brands .index-brands-card:hover img {
 }
 /* tablet media query */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  /* about-parallax */
+  .about-parallax-section {
+    padding: 80px 0;
+  }
+
+  .about-parallax-section .gradient-text {
+    font-size: 2.5rem;
+  }
+
+  .about-parallax-section .about-parallax-text {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .about-parallax-section .about-parallax-features {
+    justify-content: space-between;
+  }
+
+  .about-parallax-section .about-feature-item {
+    margin-right: 15px;
+  }
+  /* about-whychoose */
+  .whychoose-us .section-title {
+    font-size: 2.2rem;
+  }
+
+  .whychoose-us .section-subtitle {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .whychoose-us .feature-box {
+    padding: 25px 15px;
+  }
+
+  .whychoose-us .feature-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .whychoose-us .feature-icon i {
+    font-size: 1.7rem;
+  }
+
+  .whychoose-us .feature-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .whychoose-us .feature-content p {
+    font-size: 0.9rem;
+  }
+  /* about-intro */
+  .about-intro {
+    padding: 60px 0;
+  }
+
+  .about-intro .about-intro-title {
+    font-size: 32px;
+  }
+
+  .about-intro .about-intro-button {
+    padding: 10px 18px;
+  }
+
+  .about-intro .about-intro-stat .stat-number {
+    font-size: 22px;
+  }
+
+  .about-intro .about-intro-stat .stat-label {
+    font-size: 13px;
+  }
+
+  .about-intro .cert-badges {
+    gap: 8px;
+  }
   /* navbar */
   .navigation .menu li a {
     font-size: 2rem;
@@ -3451,11 +3433,6 @@ section.index-brands .index-brands-card:hover img {
 
   section.index-products .index-products-title {
     font-size: 2.2rem;
-  }
-
-  section.index-products .index-products-wrapper {
-    /* grid-template-columns: 1fr;
-    gap: 2rem; */
   }
 
   section.index-products .index-product-card {
@@ -3565,7 +3542,7 @@ section.index-brands .index-brands-card:hover img {
 
   /* offcanvas navbar */
   .navigation .logo {
-    top: 65px;
+    top: -45px;
     left: 24px;
   }
 
@@ -3581,7 +3558,7 @@ section.index-brands .index-brands-card:hover img {
     padding: 40px 0;
   }
 }
-/* *************************************************************************************************** */
+/* ******************* */
 #notfound {
   position: relative;
   height: 100vh;

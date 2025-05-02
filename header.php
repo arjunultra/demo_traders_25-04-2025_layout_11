@@ -49,20 +49,23 @@
                                 class="img-fluid main-logo">
 
                             <!-- Wrap text content in a full-width div -->
-                            <div class="w-100 text-start contact-details">
-                                <p class="mb-2 d-flex">
-                                    <i class="bi bi-geo-alt-fill text-warning mr-2"></i> Demo Building,Demo Colony,Demo
-                                    Street,Sivakasi
-                                </p>
-                                <p class="mb-2 d-flex">
-                                    <i class="bi bi-whatsapp text-success mr-2"></i> +91 9999999999
-                                </p>
-                                <p class="mb-2 d-flex">
-                                    <i class="bi bi-telephone text-primary mr-2"></i> +91 8888888888, +91 7777777777
-                                </p>
-                                <p class="mb-2 d-flex">
-                                    <i class="bi bi-envelope-fill text-warning mr-2"></i> info@crackershop.com
-                                </p>
+                            <div class="w-75 text-start contact-details">
+                                <div class="align-container text-left">
+                                    <p class="mb-2 d-flex">
+                                        <i class="bi bi-geo-alt-fill text-warning mr-2"></i> Demo Building,Demo
+                                        Colony,Demo
+                                        Street,Sivakasi
+                                    </p>
+                                    <p class="mb-2 d-flex">
+                                        <i class="bi bi-whatsapp text-success mr-2"></i> +91 9999999999
+                                    </p>
+                                    <p class="mb-2 d-flex">
+                                        <i class="bi bi-telephone text-primary mr-2"></i> +91 8888888888, +91 7777777777
+                                    </p>
+                                    <p class="mb-2 d-flex">
+                                        <i class="bi bi-envelope-fill text-warning mr-2"></i> info@crackershop.com
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
